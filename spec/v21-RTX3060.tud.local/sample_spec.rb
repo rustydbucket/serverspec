@@ -1,3 +1,3 @@
-require 'serverspec'
+require 'spec_helper'
 
-set :backend, :exec
+#describe user accounts that must be on host
