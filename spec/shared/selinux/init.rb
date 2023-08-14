@@ -1,4 +1,4 @@
-shared_rhel_8 'selinux::init' do
+shared_examples 'selinux::init' do
 
     set :os, :family => 'redhat'
 

@@ -3,9 +3,9 @@ shared_examples 'chrony::init' do
     describe service('chronyd') do
         it {should be_enabled}
         it {should be_running}
-    end 
+    end
 
-    describe file('/etc/chrony.conf')
+    describe file('/etc/chrony.conf') do
         its(:content) {should contain 'driftfile /var/lib/chrony/drift' }
         its(:content) {should contain 'logdir /var/log/chrony'}
         its(:content) {should contain 'keyfile /etc/chrony.keys'}
@@ -16,4 +16,5 @@ shared_examples 'chrony::init' do
         its(:content) {shoold contain 'server 3.au.pool.ntp.org iburst'}
         its(:content) {should contain 'rtcsync'}
         its(:content) {should contain 'makesetp 1.0 3'}
+    end
 end
