@@ -20,5 +20,5 @@ shared_examples 'selinux::init' do
 
     describe selinux do
         it { should be_disabled }
-    end:with_policy
+    end
 end
