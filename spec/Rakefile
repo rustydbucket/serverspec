@@ -2,22 +2,21 @@ require 'rake'
 require 'rspec/core/rake_task'
 
 hosts = %w(
-    #hostname.rba.gov.au
-    #hostname.rba.gov.au
+    puppet-master-local.tud.local
 )
 
 task :spec => 'spec:all'
 
 namespace :spec do
-    task :all => hosts.map {|h| 'spec:' + h.split('.'[0]) }
-    hosts.each dp |host|
-        short_name = host.split('.')[0]
-        role  = short_nae.match(/[^0-9]+/)[0]
+  task :all => hosts.map {|h| 'spec:' + h.split('.')[0] }
+  hosts.each do |host|
+    short_name = host.split('.')[0]
+    role       = short_name.match(/[^0-9]+/)[0]
 
-        desc "Run serverspec to #{host}"
-        RSpec::Core::RakeTask.new(short_name) do |t|
-            ENV['TARGET_HOST'] = host
-            t.pattern = "spec/{base,#{role}}/*_spec.rb"
-        end
+    desc "Run serverspec to #{host}"
+    RSpec::Core::RakeTask.new(short_name) do |t|
+      ENV['TARGET_HOST'] = host
+      t.pattern = "spec/{base,#{role}}/*_spec.rb"
     end
+  end
 end
