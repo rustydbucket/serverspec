@@ -1,4 +1,4 @@
-shared_rhel_8 'auditd::init' do
+shared_examples 'auditd::init' do
     set :os, :family => 'redhat'
 
     describe linux_audit_system do

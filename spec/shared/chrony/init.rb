@@ -1,4 +1,4 @@
-shared_rhel_8 'chrony::init' do
+shared_examples 'chrony::init' do
 
     describe service('chronyd') do
         it {should be_enabled}

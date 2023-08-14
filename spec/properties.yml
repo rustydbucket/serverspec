@@ -1,5 +1,4 @@
 puppet-master.tud.local:
-        :roles:
-          - chrony
-          - auditd
-        :server_id: 01
+    :server_id: 1
+localhost:
+    :server_id: 2
