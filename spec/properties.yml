@@ -1,2 +1,2 @@
-puppet-master.tud.local:
-    :server_id: 1
+#puppet-master.tud.local:
+#    :server_id: 1
