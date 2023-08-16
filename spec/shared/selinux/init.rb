@@ -1,4 +1,4 @@
-shared_rhel_8 'selinux::init' do
+shared_examples 'selinux::init' do
 
     set :os, :family => 'redhat'
 
@@ -20,5 +20,5 @@ shared_rhel_8 'selinux::init' do
 
     describe selinux do
         it { should be_disabled }
-    end:with_policy
+    end
 end

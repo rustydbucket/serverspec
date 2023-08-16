@@ -1,4 +1,4 @@
-shared_rhel_8 'apache::init' do
+shared_examples 'apache::init' do
     set :os, :family => 'redhat'
     
     describe package('httpd') do
